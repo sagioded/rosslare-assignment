@@ -1,0 +1,57 @@
+@import "../../../../styles/variables";
+
+.user-details {
+  margin-left: 30px;
+  .card {
+    border: none;
+    background-color: inherit;
+    .card-header {
+      position: relative;
+      background-color: $secondary;
+      height: 130px;
+
+      .btn-edit {
+        align-self: flex-end;
+        padding: 7px 30px;
+      }
+      .btn-close {
+        color: $primary-color;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 30px;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  .nav-tabs {
+    border-bottom: 1px solid $secondary;
+    margin-top: 10px;
+
+    .nav-link {
+      color: inherit;
+      border: 0;
+    }
+    .nav-link.active,
+    .nav-item.show .nav-link {
+      background-color: inherit;
+      border-bottom: 2px solid rgb(236, 236, 236);
+    }
+  }
+
+  .form-group {
+    margin-bottom: 0;
+
+    label {
+      color: $secondary-color;
+    }
+    label,
+    input {
+      font-size: 15px;
+    }
+  }
+  .form-control-plaintext {
+    color: inherit;
+  }
+}

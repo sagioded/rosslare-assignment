@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "rossalre-assignment": {
+    "rosslare-assignment": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/rossalre-assignment",
+            "outputPath": "dist/rosslare-assignment",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -66,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rossalre-assignment:build"
+            "browserTarget": "rosslare-assignment:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rossalre-assignment:build:production"
+              "browserTarget": "rosslare-assignment:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rossalre-assignment:build"
+            "browserTarget": "rosslare-assignment:build"
           }
         },
         "test": {
@@ -92,6 +92,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.scss"
             ],
             "scripts": []
@@ -114,15 +115,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "rossalre-assignment:serve"
+            "devServerTarget": "rosslare-assignment:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "rossalre-assignment:serve:production"
+              "devServerTarget": "rosslare-assignment:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "rossalre-assignment"
+    }
+  },
+  "defaultProject": "rosslare-assignment"
 }

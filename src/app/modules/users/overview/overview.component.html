@@ -1,0 +1,50 @@
+<div class="users-overview">
+  <mat-drawer-container class="sidenav-container" autosize>
+    <mat-drawer #drawer class="sidenav" mode="side" position="end">
+      <ng-container *ngIf="usersService.currentUser$ | async as currentUser">
+        <app-details [user]="currentUser" (close)="drawer.close()"></app-details>
+      </ng-container>
+    </mat-drawer>
+
+    <div class="sidenav-content" *ngIf="usersService.pages$ | async as users">
+      <h1> Users </h1>
+      <p>Showing {{ users.length }} out of {{ (usersService.users$ | async)?.length }} users. </p>
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col" *ngFor="let col of displayedColumns"> {{ col }} </th>
+            <th class="actions"> </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users; index as i" (click)="onUserClicked(i)">
+            <td class="avatar"><i class="fas fa-user"></i></td>
+            <td> {{ user.name }} </td>
+            <td> {{ user.username }} </td>
+            <td> {{ user.access.accessGroup }} </td>
+            <td> {{ user.access.accessLevel }} </td>
+            <td> <a [href]="user.website" target="_blank">{{ user.website }}</a> </td>
+            <td class="actions"> <button class="btn btn-link"><i class="fas fa-ellipsis-v"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="d-flex justify-content-between p-2">
+        <ngb-pagination [collectionSize]="(usersService.users$ | async).length" [(page)]="usersService.page"
+          [pageSize]="usersService.pageSize" (pageChange)="usersService.refresh()">
+        </ngb-pagination>
+
+        <select class="custom-select" style="width: auto" [(ngModel)]="usersService.pageSize"
+          (ngModelChange)="usersService.refresh()">
+          <option [ngValue]="5">5 items per page</option>
+          <option [ngValue]="10">10 items per page</option>
+          <option [ngValue]="25">25 items per page</option>
+        </select>
+      </div>
+
+      <app-loader *ngIf="usersService.loading$ | async"></app-loader>
+    </div>
+
+  </mat-drawer-container>
+</div>

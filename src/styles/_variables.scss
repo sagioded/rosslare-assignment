@@ -1,0 +1,23 @@
+$primary: #071a25;
+$primary-color: #fff;
+$secondary-color: #5b7c8e;
+$secondary: #293d48;
+$light: #5b7c8e;
+
+
+$scroll-bg:  #95a6b4;
+$scroll-thumb-color:  #ccd3d8;
+$scroll-thumb-color-hover:  #ccd3d8;
+
+
+// boostrap overrides
+$theme-colors: (
+  "light": $light,
+);
+
+$input-box-shadow: none;
+$input-focus-box-shadow: none;
+$btn-box-shadow: none;
+$input-border-radius: 0;
+
+$nav-link-padding-x: 1.5rem;

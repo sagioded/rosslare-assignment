@@ -1,0 +1,85 @@
+@import "../../../../styles/variables";
+
+.sidenav-container {
+}
+
+.sidenav-content {
+  height: calc(100vh - 50px );
+  overflow-y: auto;
+  padding-right: 25px;
+
+}
+.sidenav {
+  min-width: 600px;
+}
+
+a {
+  color: $secondary-color;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+
+table {
+  width: 100%;
+  //   background-color: #081d29;
+  color: $primary-color;
+
+  tr {
+    border-bottom: 7px solid #051119;
+
+    td {
+      border-style: none solid solid none;
+    }
+    td:first-child,
+    th:first-child {
+      border-top-left-radius: 10px;
+    }
+    td:last-child,
+    th:last-child {
+      border-top-right-radius: 10px;
+    }
+    td:first-child,
+    th:first-child {
+      border-bottom-left-radius: 0;
+    }
+    td:last-child,
+    th:last-child {
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  thead {
+    tr {
+      background-color: $secondary;
+      th {
+        padding: 20px;
+      }
+    }
+  }
+
+  tbody {
+    tr {
+      background-color: #16242d;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+  tr {
+    td,
+    th {
+      border: 0;
+      vertical-align: middle;
+    }
+  }
+}
+
+.actions {
+  button {
+    color: #4a5e69;
+  }
+}
